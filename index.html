@@ -2,127 +2,302 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF - 8">
-    <meta name="viewport" content="width=device-width, initial - scale=1.0">
-    <title>[Your Name]'s Personal Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
         body {
-            font-family: Arial, sans - serif;
-            line - height: 1.6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background - color: #f4f4f4;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         header {
-            background - color: #333;
+            background-color: var(--primary-color);
             color: white;
-            text - align: center;
-            padding: 2rem 0;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         h1 {
             margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         main {
-            max - width: 800px;
-            margin: 0 auto;
             padding: 2rem;
-            background - color: white;
-            box - shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         section {
-            margin - bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         h2 {
-            color: #333;
-            border - bottom: 1px solid #ccc;
-            padding - bottom: 0.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        p {
+        .section-content {
+            margin-left: 1rem;
+        }
+
+        .experience-item, .patent-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .experience-item:last-child, .patent-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .position {
+            color: var(--secondary-color);
+        }
+
+        .date {
             color: #666;
         }
 
-        ul {
-            list - style: none;
-            padding: 0;
+        .description {
+            margin-top: 0.5rem;
+            color: #444;
         }
 
-        li {
-            margin - bottom: 0.5rem;
+        .patent-number {
+            font-weight: bold;
+            color: var(--primary-color);
         }
 
-        a {
-            color: #007BFF;
-            text - decoration: none;
+        .patent-title {
+            color: var(--secondary-color);
+            display: block;
+            margin-top: 0.3rem;
         }
 
-        a:hover {
-            text - decoration: underline;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
 
         footer {
-            text - align: center;
-            padding: 1rem 0;
-            background - color: #333;
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--primary-color);
             color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 0.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>[Your Name]'s Personal Homepage</h1>
-    </header>
-    <main>
-        <section id="about - me">
-            <h2>About Me</h2>
-            <p>[Describe yourself briefly. Mention your occupation, interests, and a little about your personality. For example: I'm [Your Name], a [Your Occupation] with a passion for [Your Interest]. I love [Describe an activity you enjoy].]</p>
-        </section>
-        <section id="work - research - experience">
-            <h2>Work & Research Experience</h2>
-            <ul>
-                <li>
-                    <strong>Company/Institution Name 1</strong> - [Position/Research Area 1]<br>
-                    [Start Date 1] - [End Date 1]<br>
-                    [Describe your key responsibilities, achievements, or research findings during this period. For example: Led a project that increased sales by 20% within six months. Or Conducted research on [Research Topic] and published a paper in [Journal Name].]
-                </li>
-                <li>
-                    <strong>Company/Institution Name 2</strong> - [Position/Research Area 2]<br>
-                    [Start Date 2] - [End Date 2]<br>
-                    [Describe your work or research experience here.]
-                </li>
-                <!-- Add more items as needed -->
-            </ul>
-        </section>
-        <section id="goals">
-            <h2>My Goals</h2>
-            <ul>
-                <li>Short - term: [Describe your short - term goal, e.g., "Complete a project at work within the next month" or "Learn a new programming language in the next three months"]</li>
-                <li>Long - term: [Describe your long - term goal, e.g., "Become a manager in my field in the next five years" or "Publish a book on my area of expertise"]</li>
-            </ul>
-        </section>
-        <section id="hobbies">
-            <h2>My Hobbies</h2>
-            <p>[List your hobbies and describe them a bit. For example: In my free time, I'm an enthusiastic [Your Hobby]. Whether it's [Describe your hobby activity, like "painting landscapes that capture the beauty of nature" or "playing football with friends every weekend"], it brings me a lot of joy and relaxation.]</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>You can get in touch with me through the following channels:</p>
-            <ul>
-                <li>Email: <a href="mailto:[Your Email Address]">[Your Email Address]</a></li>
-                <li>LinkedIn: <a href="[Your LinkedIn Profile Link]">My LinkedIn Profile</a></li>
-                <!-- Add more contact methods if you have, like GitHub, Twitter, etc. -->
-            </ul>
-        </section>
-    </main>
-    <footer>
-        &copy; [Current Year] [Your Name]. All rights reserved.
-    </footer>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Xiaowei Zhao</h1>
+                <div class="contact-info">
+                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="summary">
+                <h2>Professional Summary</h2>
+                <div class="section-content">
+                    <p>[A concise professional summary highlighting your key skills, experience, and career objectives. Focus on your unique value proposition and what you bring to potential employers.]</p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <span class="company">Company Name</span>
+                                <span class="position"> - Position Title</span>
+                            </div>
+                            <div class="date">Start Date - End Date</div>
+                        </div>
+                        <div class="description">
+                            <ul>
+                                <li>Key achievement or responsibility</li>
+                                <li>Another significant accomplishment</li>
+                                <li>Notable project or initiative</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="patents">
+                <h2>Patents</h2>
+                <div class="section-content">
+                    <div class="patent-item">
+                        <span class="patent-number">CN2018109879417</span>
+                        <span class="patent-title">漏扫识别方法、装置、自助收银终端及系统</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2019106326093</span>
+                        <span class="patent-title">多媒体文件分类、信息处理与模型训练方法、系统及设备</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2018116531136</span>
+                        <span class="patent-title">商品购物处理系统、方法、装置及电子设备</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2019100193967</span>
+                        <span class="patent-title">用户轨迹确定系统、方法、装置及服务器</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2018114596051</span>
+                        <span class="patent-title">视频处理方法、装置及电子设备</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2018114575604</span>
+                        <span class="patent-title">视频处理方法、装置及电子设备</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2016106758341</span>
+                        <span class="patent-title">一种生成文本的方法、装置、设备及客户端</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2016107200173</span>
+                        <span class="patent-title">目标对象属性的预测方法、装置和系统</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN201610653563X</span>
+                        <span class="patent-title">一种机器学习分类模型的建立方法、装置及系统</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2016106757508</span>
+                        <span class="patent-title">一种图像的文本信息的生成、显示方法及电子设备</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2016104385515</span>
+                        <span class="patent-title">商品偏好预估方法和装置</span>
+                    </div>
+                    <div class="patent-item">
+                        <span class="patent-number">CN2015104080211</span>
+                        <span class="patent-title">图像检测方法及装置</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="section-content">
+                    <div class="skills">
+                        <span class="skill-tag">Skill 1</span>
+                        <span class="skill-tag">Skill 2</span>
+                        <span class="skill-tag">Skill 3</span>
+                        <span class="skill-tag">Skill 4</span>
+                        <span class="skill-tag">Skill 5</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <span class="company">University Name</span>
+                                <span class="position"> - Degree, Major</span>
+                            </div>
+                            <div class="date">Graduation Year</div>
+                        </div>
+                        <div class="description">
+                            <p>Relevant coursework, achievements, or honors</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2024 Your Name. All rights reserved.
+        </footer>
+    </div>
 </body>
 
 </html>
