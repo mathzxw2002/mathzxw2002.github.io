@@ -37,8 +37,21 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            position: fixed; /* 固定导航栏 */
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
+        body {
+            padding-top: 4rem; /* 给body添加上边距，避免内容被导航栏遮挡 */
+        }
+
+        html {
+            scroll-behavior: smooth; /* 平滑滚动 */
+        }
+    
+    
         nav a {
             color: white;
             text-decoration: none;
