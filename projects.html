@@ -1,566 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage - Xiaowei Zhao</title>
+    <title>项目清单</title>
     <style>
-        :root {
-            --primary-color: #34495e; /* 更改为较浅的蓝色 */
-            --secondary-color: #1abc9c; /* 更改为青色 */
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --border-color: #e0e0e0;
-        }
-
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-color);
-            background-color: var(--light-gray);
+            background-color: #f4f4f4;
         }
-
         .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .project-item {
             display: flex;
-            max-width: 1200px;
-            margin: 2rem auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        nav {
-            width: 100%;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: fixed; /* 固定导航栏 */
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        body {
-            padding-top: 4rem; /* 给body添加上边距，避免内容被导航栏遮挡 */
-        }
-
-        html {
-            scroll-behavior: smooth; /* 平滑滚动 */
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .sidebar {
-            width: 200px;
-            background-color: var(--light-gray); /* 修改背景颜色 */
-            color: var(--text-color); /* 修改字体颜色 */
-            padding: 2rem;
-            text-align: center;
-            height: 80%; /* 使侧边栏高度占满整个页面 */
-        }
-
-        .sidebar img {
-            border-radius: 50%;
+        .project-image {
             width: 150px;
             height: 150px;
-            margin-bottom: 1rem;
+            margin-right: 20px;
+            border-radius: 8px;
         }
-
-        .sidebar h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .sidebar p {
-            margin: 0.5rem 0;
-        }
-
-        .contact-info {
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-info a {
-            color: var(--text-color); /* 修改字体颜色 */
-            text-decoration: none;
-            display: block;
-            margin: 0.5rem 0;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        main {
+        .project-details {
             flex: 1;
-            padding: 2rem;
         }
-
-        header {
-            /*background-color: var(--primary-color);*/ 
-            /*background-color: var(--light-gray);*/
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 300;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-content {
-            margin-left: 1rem;
-            line-height: 2;
-        }
-
-        .paper-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .paper-title {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .paper-authors, .paper-publication {
-            color: var(--secondary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        .patent-content {
-            margin-left: 1rem;
-            line-height: 2;
-        }
-
-        .experience-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .company {
-            font-weight: bold;
-        }
-
-        .date {
-            font-style: italic;
-        }
-
-        ol {
-            padding-left: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                margin: 0;
-                box-shadow: none;
-            }
-
-            .sidebar {
-                width: 100%;
-                height: auto;
-                padding: 1rem;
-            }
-
-            main {
-                padding: 1rem;
-            }
-
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
+        .project-details h3 {
+            margin-top: 0;
         }
     </style>
 </head>
-
 <body>
-    
-    <nav>
-        <a href="#summary">个人简介</a>
-        <a href="#research">研究领域</a>
-        <a href="#experience">主要经历</a>
-        <a href="#papers">发表文章</a>
-        <a href="#patents">已授权专利</a>
-        <a href="#awards">奖励</a>
-        <a href="#projects">项目经历</a>
-        <a href="#contact">联系方式</a>
-    </nav>
-
     <div class="container">
-        <div class="sidebar">
-            <img src="照片_芝泉.jpg" alt="个人头像">
-            <h2>赵小伟</h2>
-            <p>三一集团总裁助理</p>
-            <p>盛景智能科技副总经理兼研究院院长，CTO</p>
-            <div class="contact-info">
-                <a href="mailto:zhaoxw8@sany.com.cn">zhaoxw8@sany.com.cn</a>
-                <a href="tel:+8613758247639">+86 13758247639</a>
-                <a href="https://scholar.google.fr/citations?user=ES5zJKUAAAAJ&hl=en">Google Scholar</a>
+        <h1>项目清单</h1>
+        <div class="project-item">
+            <img src="project1.jpg" alt="项目1图片" class="project-image">
+            <div class="project-details">
+                <h3>项目名称1</h3>
+                <p>项目介绍1</p>
+                <ul>
+                    <li>项目细节1</li>
+                    <li>项目细节2</li>
+                    <li>项目细节3</li>
+                </ul>
             </div>
         </div>
-
-        <main>
-            <section id="summary">
-                <h2>个人简介</h2>
-                <div class="section-content">
-                    <p>赵小伟，博士，现任三一集团总裁助理、盛景智能科技（嘉兴）有限公司副总经理兼研究院院长，CTO。毕业于中国科学院计算技术研究所智能信息处理重点实验室，后于英国帝国理工学院从事博士后研究。长期专注于人工智能及计算机视觉领域，拥有近二十年科研与产业经验。曾任职阿里巴巴达摩院从事人工智能算法研发，兼任合肥工业大学和江西财经大学硕士生导师；在国际会议和期刊发表论文20余篇，授权专利15项；曾获中国图象图形学学会科技进步奖二等奖，率团队斩获ACM MM LSVC机器视觉国际竞赛冠军。任职三一期间，主持规划、研发了机器视觉和车联智能领域的系列产品。在机器视觉方向，面向新能源锂电、光伏、汽车等行业，主导研发了激光振镜3D相机、视觉引导上下料、整车驾驶室质检、免示教焊接/喷涂/坡口、汽车智能引导装配、钣金件缺陷检测、硅片分选机等创新产品，技术指标达行业领先水平，累计交付蜂巢能源、浦项制铁、美的等头部企业超百个项目，创造销售额约2亿元；在车联智能方向，主导研发高性能AI边缘计算单元AIBox、铁甲卫士和摄像头等车载传感器，提供DMS、ADAS、360环视感知等解决方案，满足安全驾驶、智能座舱和智能监管需求，实现5000万+销售额，助力集团产品智能化升级。</p>
-                </div>
-            </section>
-
-            <section id="research">
-                <h2>研究领域</h2>
-                <div class="section-content">
-                    <ul>
-                        <li>人工智能</li>
-                        <li>计算机视觉</li>
-                        <li>机器学习</li>
-                        <li>图像处理</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>经历</h2>
-                <div class="section-content">
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="company">三一重工盛景智能</span>
-                                <span class="position"> - 副总经理兼研究院院长，总裁助理</span>
-                            </div>
-                            <div class="date">2021.06 - </div>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="company">三一重工智能研究总院工业智能研究院</span>
-                                <span class="position"> - 院长</span>
-                            </div>
-                            <div class="date">2019.04 - 2021.06</div>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="company">iDST-Data Alibaba-图像技术-视频分析</span>
-                                <span class="position"> - 高级算法专家</span>
-                            </div>
-                            <div class="date">2014.12 - 2019.04</div>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="company">英国帝国理工学院 (Imperial College London)</span>
-                                <span class="position"> - 博士后</span>
-                            </div>
-                            <div class="date">2013.06 - 2014.12</div>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="company">中国科学院计算技术研究所</span>
-                                <span class="position"> - 博士</span>
-                            </div>
-                            <div class="date">2009.09 - 2013.07</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="papers">
-                <h2>发表文章</h2>
-                <div class="section-content">
-                    <div class="paper-item">
-                        <span class="paper-title">Latent Representation Reorganization for Face Privacy Protection.</span>
-                        <span class="paper-authors">Zhenzhong Kuang, Jianan Lu, Chenhui Hong, Haobin Huang, Suguo Zhu, Xiaowei Zhao, Jun Yu, Jianping Fan.</span>
-                        <span class="paper-publication">ACM MM 2024.</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">GMF: General Multimodal Fusion Framework for Correspondence Outlier Rejection</span>
-                        <span class="paper-authors">Xiaoshui Huang, Wentao Qu, Yifan Zuo, Yuming Fang, Xiaowei Zhao</span>
-                        <span class="paper-publication">IEEE Robotics and Automation Letters 2022</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">IMFNet: Interpretable Multimodal Fusion for Point Cloud Registration.</span>
-                        <span class="paper-authors">Xiaoshui Huang, Wentao Qu, Yifan Zuo, Yuming Fang, Xiaowei Zhao</span>
-                        <span class="paper-publication">IEEE Robotics and Automation Letters 2022</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Unsupervised Point Cloud Registration by Learning Unified Gaussian Mixture Models.</span>
-                        <span class="paper-authors">Xiaoshui Huang, Sheng Li, Yifan Zuo, Yuming Fang, Jian Zhang, Xiaowei Zhao</span>
-                        <span class="paper-publication">IEEE Robotics and Automation Letters 2022</span>
-                    </div>
-
-                    <div class="paper-item">
-                        <span class="paper-title">Visual cluster grounding for image captioning.</span>
-                        <span class="paper-authors">Wenhui Jiang, Minwei Zhu, Yuming Fang, Guangming Shi, Xiaowei Zhao, Yang Liu</span>
-                        <span class="paper-publication">IEEE TIP 2022</span>
-                    </div>
-
-                    <div class="paper-item">
-                        <span class="paper-title">Unified Face Analysis by Iterative Multi-Output Random Forests.</span>
-                        <span class="paper-authors">Xiaowei Zhao, Tae-Kyun Kim, Wenhan Luo</span>
-                        <span class="paper-publication">CVPR 2014</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Cascaded Shape Space Pruning for Robust Facial Landmark Detection.</span>
-                        <span class="paper-authors">Xiaowei Zhao, Shiguang Shan, Xiujuan Chai, Xilin Chen</span>
-                        <span class="paper-publication">ICCV 2013</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Joint Face Alignment: Rescue Bad Alignments with Good Ones by Regularized Re-fitting.</span>
-                        <span class="paper-authors">Xiaowei Zhao, Xiujuan Chai, Shiguang Shan</span>
-                        <span class="paper-publication">ECCV 2012</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Conditional Convolutional Neural Network for Modality-aware Face Recognition.</span>
-                        <span class="paper-authors">Chao Xiong, Xiaowei Zhao, Danhang Tang, Shuicheng Yan, Tae-Kyun Kim</span>
-                        <span class="paper-publication">ICCV 2015</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Automatic Topic Discovery for Multi-object Tracking.</span>
-                        <span class="paper-authors">Wenhan Luo, Stenger Bjorn, Xiaowei Zhao, Tae-Kyun Kim</span>
-                        <span class="paper-publication">AAAI 2015</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Convolutional Fusion Network for Face Verification in the Wild.</span>
-                        <span class="paper-authors">Chao Xiong, Luoqi Liu, Xiaowei Zhao, Shuicheng Yan, Tae-Kyun Kim</span>
-                        <span class="paper-publication">CSVT 2015</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Multiple Object Tracking: A Review.</span>
-                        <span class="paper-authors">Wenhan Luo, Xiaowei Zhao, Tae-Kyun Kim</span>
-                        <span class="paper-publication">arXiv preprint arXiv:1409.7618, 2014</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Active Random Forests: An Application to Autonomous Unfolding of Clothes.</span>
-                        <span class="paper-authors">Andreas Doumanoglou, Tae-Kyun Kim, Xiaowei Zhao, Sotiris Malassiotis</span>
-                        <span class="paper-publication">ECCV 2014</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Bi-label Propagation for Generic Multiple Object Tracking.</span>
-                        <span class="paper-authors">Wenhan Luo, Tae-Kyun Kim, Björn Stenger, Xiaowei Zhao, Roberto Cipolla</span>
-                        <span class="paper-publication">CVPR 2014</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Coupling Alignments with Recognition for Still-to-Video Face Recognition.</span>
-                        <span class="paper-authors">Zhiwu Huang, Xiaowei Zhao, Shiguang Shan, Ruiping Wang, Xilin Chen</span>
-                        <span class="paper-publication">ICCV 2013</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Context Modeling for Facial Landmark Detection Based on Non-Adjacent Rectangle (NAR) Haar-like Feature.</span>
-                        <span class="paper-authors">Xiaowei Zhao, Xiujuan Chai, Zhiheng Niu, Cherkeng Heng, Shiguang Shan</span>
-                        <span class="paper-publication">Image and Vision Computing 2012</span>
-                    </div>
-                    <div class="paper-item">
-                        <span class="paper-title">Context Constrained Facial Landmark Localization Based on Discontinuous Haar-like Feature.</span>
-                        <span class="paper-authors">Xiaowei Zhao, Xiujuan Chai, Zhiheng Niu, Cherkeng Heng, Shiguang Shan</span>
-                        <span class="paper-publication">FG 2011</span>
-                    </div>
-                    <!-- 其他文章可以按照上述格式添加 -->
-                </div>
-            </section>
-
-            <section id="patents">
-                <h2>已授权专利</h2>
-                <div class="section-content">
-                    <div class="patent-item">
-                        <span class="patent-title">CN2018109879417, 漏扫识别方法、装置、自助收银终端及系统</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2019106326093, 多媒体文件分类、信息处理与模型训练方法、系统及设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2018116531136, 商品购物处理系统、方法、装置及电子设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2019100193967, 用户轨迹确定系统、方法、装置及服务器</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2018114596051, 视频处理方法、装置及电子设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2018114575604, 视频处理方法、装置及电子设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2016106758341, 一种生成文本的方法、装置、设备及客户端</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2016107200173, 目标对象属性的预测方法、装置和系统</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN201610653563X, 一种机器学习分类模型的建立方法、装置及系统</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2016106757508, 一种图像的文本信息的生成、显示方法及电子设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2016104385515, 商品偏好预估方法和装置</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2015104080211, 图像检测方法及装置</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2020107353936, 物料数量变化类别识别方法及装置</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2020106382240, 物料压线的识别方法和装置</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2019111543714, 厂房内对象行为识别方法、装置以及电子设备</span>
-                    </div>
-                    <div class="patent-item">
-                        <span class="patent-title">CN2019111501336, 工厂物料管理方法、装置和电子设备</span>
-                    </div>
-                    <!-- 其他专利可以按照上述格式添加 -->
-                </div>
-            </section>
-
-            <section id="awards">
-                <h2>奖励</h2>
-                <div class="section-content">
-                    <ol>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2024 中国图象图形学学会科技进步奖二等奖, “视觉数据智能编码与质量优化关键技术及应用”项目，盛景与江西财经大学共同申报</span>
-                                </div>
-                                <div class="date">2024</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2024，三一科技节智能化技术创新奖，高柔性视觉智能视觉检测系统</span>
-                                </div>
-                                <div class="date">2024</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2023，三一科技节数字化技术创新奖（二等奖），面向智能制造场景的手眼脑融合智能研究与应用</span>
-                                </div>
-                                <div class="date">2023</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2021，三一科技节视觉识别前沿技术研究及产业应用</span>
-                                </div>
-                                <div class="date">2021</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2021, “直通乌镇”全球互联网大赛三等奖</span>
-                                </div>
-                                <div class="date">2021</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2017, ACM Multimedia 2017 LSVC竞赛冠军</span>
-                                </div>
-                                <div class="date">2017</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2012年中国科学院计算技术研究所所长奖学金优秀奖</span>
-                                </div>
-                                <div class="date">2012</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2011年度 JDL实验室优秀个人</span>
-                                </div>
-                                <div class="date">2011</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2010年度 JDL实验室优秀个人</span>
-                                </div>
-                                <div class="date">2010</div>
-                            </div>
-                        </li>
-                        <li class="experience-item">
-                            <div class="experience-header">
-                                <div>
-                                    <span class="company">2008年6月被评为中德软件集成技术联合实验室优秀学生</span>
-                                </div>
-                                <div class="date">2008</div>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2>联系方式</h2>
-                <div class="section-content">
-                    <p>邮箱: <a href="mailto:zhaoxw8@sany.com.cn">zhaoxw8@sany.com.cn</a></p>
-                    <p>电话: <a href="tel:+8613758247639">+86 13758247639</a></p>
-                </div>
-            </section>
-        </main>
+        <div class="project-item">
+            <img src="project2.jpg" alt="项目2图片" class="project-image">
+            <div class="project-details">
+                <h3>项目名称2</h3>
+                <p>项目介绍2</p>
+                <ul>
+                    <li>项目细节1</li>
+                    <li>项目细节2</li>
+                    <li>项目细节3</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 可以根据需要添加更多项目 -->
     </div>
-
 </body>
-
 </html>
