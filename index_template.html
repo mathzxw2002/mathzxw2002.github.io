@@ -50,8 +50,7 @@
         html {
             scroll-behavior: smooth; /* 平滑滚动 */
         }
-    
-    
+
         nav a {
             color: white;
             text-decoration: none;
@@ -69,7 +68,6 @@
             color: white;
             padding: 2rem;
             text-align: center;
-            /*position: fixed; /* 固定左侧部分 */
             height: 80%; /* 使侧边栏高度占满整个页面 */
         }
 
@@ -108,7 +106,6 @@
         main {
             flex: 1;
             padding: 2rem;
-            /*margin-left: 260px; /* 给主内容区添加左边距，避免被固定的侧边栏遮挡 */
         }
 
         header {
@@ -170,10 +167,23 @@
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
+                margin: 0;
+                box-shadow: none;
             }
 
             .sidebar {
                 width: 100%;
+                height: auto;
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
             }
         }
     </style>
